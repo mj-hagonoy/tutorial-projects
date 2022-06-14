@@ -1,6 +1,11 @@
 let ips = [];
 let _ipMap = {};
 
+const Reset = () => {
+    ips = [];
+    _ipMap = {};
+}
+
 const Save = ({ip, stock}) => {
     let id = `${ip}_${stock}`;
     if(_ipMap.hasOwnProperty(id)) return;
@@ -24,6 +29,6 @@ const GetRelLikeCount = (stock1, stock2) => {
     return result;
 }
 
-module.exports = {Save, GetLikeCount, GetRelLikeCount}
+module.exports = {Save, GetLikeCount, GetRelLikeCount, Reset}
 
 
